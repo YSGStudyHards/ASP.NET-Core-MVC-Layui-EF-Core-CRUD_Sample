@@ -1,0 +1,13 @@
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Service\bin\Debug\netcoreapp3.1\Service.deps.json
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Service\bin\Debug\netcoreapp3.1\Service.dll
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Service\bin\Debug\netcoreapp3.1\Service.pdb
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Service\bin\Debug\netcoreapp3.1\Dal.dll
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Service\bin\Debug\netcoreapp3.1\Model.dll
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Service\bin\Debug\netcoreapp3.1\Dal.pdb
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Service\bin\Debug\netcoreapp3.1\Model.pdb
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Service\obj\Debug\netcoreapp3.1\Service.csprojAssemblyReference.cache
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfoInputs.cache
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfo.cs
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Service\obj\Debug\netcoreapp3.1\Service.csproj.CopyComplete
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Service\obj\Debug\netcoreapp3.1\Service.dll
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Service\obj\Debug\netcoreapp3.1\Service.pdb

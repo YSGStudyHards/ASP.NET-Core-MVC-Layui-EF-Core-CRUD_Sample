@@ -1,0 +1,11 @@
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Dal\bin\Debug\netcoreapp3.1\Dal.deps.json
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Dal\bin\Debug\netcoreapp3.1\Dal.dll
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Dal\bin\Debug\netcoreapp3.1\Dal.pdb
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Dal\bin\Debug\netcoreapp3.1\Model.dll
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Dal\bin\Debug\netcoreapp3.1\Model.pdb
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Dal\obj\Debug\netcoreapp3.1\Dal.csprojAssemblyReference.cache
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Dal\obj\Debug\netcoreapp3.1\Dal.AssemblyInfoInputs.cache
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Dal\obj\Debug\netcoreapp3.1\Dal.AssemblyInfo.cs
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Dal\obj\Debug\netcoreapp3.1\Dal.csproj.CopyComplete
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Dal\obj\Debug\netcoreapp3.1\Dal.dll
+E:\A-我的Github开源项目\EFCore_MySQL_CURD_Sample\Dal\obj\Debug\netcoreapp3.1\Dal.pdb

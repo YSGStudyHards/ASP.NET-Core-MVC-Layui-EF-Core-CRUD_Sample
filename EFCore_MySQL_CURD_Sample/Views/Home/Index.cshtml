@@ -1,0 +1,139 @@
+﻿@{
+    ViewData["Title"] = "ASP.NET Core MVC+Layui使用EF Core连接MySQL执行简单的CRUD操作";
+}
+<div style="margin-top:4px;"></div>
+<script type="text/html" id="test-table-toolbar-barDemo">
+    <button class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon">&#xe642;</i>编辑</button>
+    <button class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon">&#xe640;</i>删除</button>
+</script>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    <!--// 搜索：用户姓名-->
+                    <div class="layui-inline">
+                        <input class="layui-input layui-icon-search" name="id" id="userName" autocomplete="off" placeholder="请输入用户名">
+                    </div>
+                    <button class="layui-btn layui-btn" id="queryData"><i class="layui-icon">&#xe615;</i>查询</button>
+                    <button class="layui-btn layui-btn" onclick="addData()"> <i class="layui-icon">&#xe624;</i> 数据添加</button>
+                    <button class="layui-btn layui-btn" id="btn-refresh"><i class="layui-icon">&#xe9aa;</i>刷新</button>
+                </div>
+
+                <div class="layui-card-body">
+                    <table class="layui-hide" id="layUI_Table"  lay-filter="layUI_Table"> </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+        //layui—table表格渲染和数据绑定
+        layui.use('table', function () {
+            var table = layui.table;
+
+         // 表格渲染
+         var tableIns=table.render({
+               elem: '#layUI_Table',
+               url: '@Url.Action("GetUserInfo","OperationApi")',
+               toolbar: '#test-table-toolbar-toolbarDemo',
+               loading: true,
+               height: 505, //容器高度
+               limit: 15,
+               limits: [15, 30, 60, 90],
+               cols: [
+                   [
+                       { field: 'id', width: 110, title: '用户编号', sort: true },
+                       { field: 'userName', width: 150, title: '用户名' }, { field: 'sex', width: 70, title: '性别' },
+                       { field: 'phone', width: 150, title: '手机号' },
+                       { field: 'description', width: 300, title: '个人介绍' },
+                       { field: 'hobby', title: '爱好', minWidth: 150, width: 280 },
+                       {fixed: 'right', title:'操作', toolbar: '#test-table-toolbar-barDemo', width:150}
+                   ]
+               ],
+               page: true
+            });
+
+            // 刷新
+            $('#btn-refresh').on('click',
+                function() {
+                    tableIns.reload();
+                });
+
+            //数据查询
+            $("#queryData").on("click",
+                function() {
+
+                    var userName = $("#userName").val();
+                    //if (userName == "") {
+                    //    layer.msg("用户名不能为空~");
+                    //    return false;
+                    //}
+
+                    table.reload('layUI_Table',
+                        {
+                            where: { //请求参数（注意：这里面的参数可任意定义，并非下面固定的格式）
+                                userName: userName
+                                //,order: obj.type //排序方式
+                            }
+                        });
+                });
+
+            //注意这里tool里面是匹配lay-filter ：事件过滤器（公用属性），主要用于事件的精确匹配，跟选择器是比较类似的。
+            //监听行工具事件
+            table.on('tool(layUI_Table)', function(obj){
+                var data = obj.data;
+
+                console.log(data);
+
+                if(obj.event === 'del'){//数据删除
+                    layer.confirm('您确定要删除该条记录吗？', function (index) {
+                        $.ajax({
+                            async: true,
+                            dataType: 'json',
+                            type: 'post',
+                            url: "@Url.Action("DataDelete","OperationApi")",
+                            data: { id: data.id },
+                            success: function (res) {
+                                if (res.code == 0) {
+                                    obj.del();
+                                }
+                                layer.msg(res.resultMsg);
+                                layer.close(index);
+                            }
+                            
+                        });
+       
+                    });
+                }
+                else if (obj.event === 'edit') {
+                    //数据更新
+                    layer.open({
+                        type: 2,
+                        title: '数据编辑',
+                        shadeClose: true,
+                        shade: false,
+                        maxmin: true, //开启最大化最小化按钮
+                        area: ['700px', '500px'],
+                        content: '@Url.Action("DataEditDialog")?id='+data.id
+                    });
+                }
+            });
+        });
+
+        //添加弹窗
+        function addData() {
+            layer.open({
+                type: 2,
+                title: '数据添加',
+                shadeClose: true,
+                shade: false,
+                maxmin: true, //开启最大化最小化按钮
+                area: ['700px', '500px'],
+                content: '@Url.Action("AddDialog")'
+            });
+        }
+
+</script>
